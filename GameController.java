@@ -162,7 +162,7 @@ public class GameController {
 			}
 			else
 			{
-				total = strategy('O');
+				total = strategy('O'); //will only change if computer has won
 				if(total == -1)
 					total = strategy('X');
 			}
@@ -225,7 +225,8 @@ public class GameController {
 			int x,y,m,n,p = 0;
 			//this array is an array with all board movements that the computer
 			//looks at to see if there are two X's or O's in a row so that
-			//it knows to win or block
+			//it knows to win or block. Each set of numbers corresponds to a cell on 
+			//the board. For example the first set of numbers corresponds to the first cell
 			int [][] strategy = {{1,3,4,4,2,6,8,8},{0,2,4,4,7,7,7,7},
 					{1,4,5,5,0,6,8,8},{0,4,6,6,5,5,5,5},{0,1,2,3,5,6,7,8},
 					{2,4,8,8,3,3,3,3},{3,4,7,7,0,2,8,8},{4,6,8,8,1,1,1,1},
@@ -234,7 +235,7 @@ public class GameController {
 			{
 				x = i/3;
 				y = i - (3*x);
-				if (b1.getCellAtPosition(x, y) == comp)
+				if (b1.getCellAtPosition(x, y) == comp)//finds the first X or O
 					for(int j = 0 ; j < 8 ; j++)
 					{
 						p = strategy[i][j];

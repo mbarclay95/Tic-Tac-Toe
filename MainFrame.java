@@ -47,6 +47,7 @@ public class MainFrame extends JFrame implements ActionListener{
 		setSize(800,800);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+
 		//adds music to the game
 		URL audio = this.getClass().getClassLoader().getResource("Erasure_Always.wav");
 		music(audio);
@@ -126,7 +127,8 @@ public class MainFrame extends JFrame implements ActionListener{
 		{
 			x = computer;
 		}
-
+		//sends computer difficulty
+		//0=easy, 1=medium, 2=hard
 		public void itemStateChanged(ItemEvent e) {
 			g1.SetComputer(x);
 		}
